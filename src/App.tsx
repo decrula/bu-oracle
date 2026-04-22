@@ -280,7 +280,7 @@ const FinalCTA = () => (
         Still wondering what your dream means?
       </h2>
       <p className="text-on-surface-variant text-lg mb-12 max-w-xl mx-auto font-light">
-        Get your complete oracular reading and personalized ritual now for just <span className="text-tertiary font-bold">$12.99</span>.
+        Get your complete oracular reading and personalized ritual now for just <span className="text-tertiary font-bold">$66.66</span>.
       </p>
       <button className="bg-tertiary text-on-tertiary px-12 py-6 rounded-full font-sans text-sm uppercase tracking-[0.2em] font-bold shadow-[0_20px_60px_rgba(233,195,73,0.3)] hover:scale-105 transition-all">
         Decode My Dream
