@@ -1,6 +1,9 @@
 "use client";
 
 import { Shield, Sparkles } from "lucide-react";
+import { PRODUCTS } from "@/lib/products";
+
+const product = PRODUCTS[0];
 
 const OrderSummary = () => {
   return (
@@ -30,22 +33,16 @@ const OrderSummary = () => {
 
         {/* Product details */}
         <div className="space-y-4 mb-6">
-          <h3 className="font-serif text-lg text-on-surface">Bu Dream Reading</h3>
-          <p className="text-sm text-on-surface-variant font-light">The Oracle's Wisdom</p>
+          <h3 className="font-serif text-lg text-on-surface">{product.name}</h3>
+          <p className="text-sm text-on-surface-variant font-light">{product.description}</p>
 
           <div className="border-t border-tertiary/20 pt-4 space-y-3">
-            <div className="flex justify-between text-sm">
-              <span className="text-on-surface-variant">Personalized Dream Analysis</span>
-              <span className="text-on-surface">Included</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-on-surface-variant">Zhou Gong's Ancient Wisdom</span>
-              <span className="text-on-surface">Included</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-on-surface-variant">Feng Shui Action Step</span>
-              <span className="text-on-surface">Included</span>
-            </div>
+            {product.features?.map((feature, index) => (
+              <div key={index} className="flex justify-between text-sm">
+                <span className="text-on-surface-variant">{feature}</span>
+                <span className="text-on-surface">Included</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -55,7 +52,9 @@ const OrderSummary = () => {
         {/* Total */}
         <div className="flex justify-between items-center mb-4">
           <span className="font-serif text-lg text-on-surface">Total</span>
-          <span className="font-serif text-3xl text-tertiary">$29</span>
+          <span className="font-serif text-3xl text-tertiary">
+            ${(product.priceInCents / 100).toFixed(2)}
+          </span>
         </div>
 
         {/* Delivery note */}
