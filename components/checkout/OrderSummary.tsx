@@ -46,10 +46,6 @@ const OrderSummary = ({ product }: { product: Product }) => {
               <span className="text-on-surface-variant">Zhou Gong's Ancient Wisdom</span>
               <span className="text-on-surface">Included</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-on-surface-variant">Feng Shui Action Step</span>
-              <span className="text-on-surface">Included</span>
-            </div>
           </div>
         </div>
 
@@ -65,7 +61,7 @@ const OrderSummary = ({ product }: { product: Product }) => {
         {/* Delivery note */}
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-on-surface-variant">
           <Shield className="w-4 h-4" />
-          <span>Instant digital delivery to your inbox</span>
+          <span>An instruction will be delivered to your inbox</span>
         </div>
       </div>
     </div>
