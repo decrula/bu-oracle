@@ -9,9 +9,9 @@ export async function startCheckoutSession(productId: string) {
     throw new Error(`Product with id "${productId}" not found`);
   }
 
+  const origin = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
   const session = await stripe.checkout.sessions.create({
-    // @ts-expect-error - ui_mode: "embedded" is supported in Stripe SDK v22+
-    ui_mode: "embedded",
     line_items: [
       {
         price_data: {
@@ -27,8 +27,10 @@ export async function startCheckoutSession(productId: string) {
       },
     ],
     mode: "payment",
-    return_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${origin}/checkout`,
+    billing_address_collection: "auto",
   });
 
-  return session.client_secret!;
+  return session.url!;
 }
