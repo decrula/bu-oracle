@@ -15,7 +15,7 @@ export async function startCheckoutSession(productId: string) {
     redirect_on_completion: "never",
     line_items: [
       {
-        price: "price_1TQRfG0Hlo41Y11UxOmUQM4f",
+        price: product.priceId,
         quantity: 1,
       },
     ],

@@ -18,7 +18,7 @@ const CheckoutForm = () => {
         Begin your sacred dream reading for $66.66.
       </p>
 
-      <Checkout productId="{product.id}" />
+      <Checkout productId={product.id} />
 
       <SecurityBadges />
     </div>
