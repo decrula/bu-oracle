@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Star, Globe, Book } from "lucide-react";
 
@@ -38,9 +39,9 @@ const Hero = () => (
         </p>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <button className="bg-tertiary text-on-tertiary px-10 py-5 rounded-full font-sans text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(233,195,73,0.2)] hover:scale-105 transition-transform">
+          <Link href="/checkout" className="bg-tertiary text-on-tertiary px-10 py-5 rounded-full font-sans text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(233,195,73,0.2)] hover:scale-105 transition-transform">
             Decode My Dream Now →
-          </button>
+          </Link>
           <div className="text-[11px] font-sans tracking-wide text-on-surface-variant/80 uppercase max-w-[200px]">
             Includes Feng Shui action step • 100% refund if not satisfied
           </div>
