@@ -1,5 +1,3 @@
-"use client";
-
 import { Shield, Sparkles } from "lucide-react";
 import { PRODUCTS } from "@/lib/products";
 import Image from "next/image";

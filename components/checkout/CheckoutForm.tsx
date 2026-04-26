@@ -1,5 +1,3 @@
-"use client";
-
 import Checkout from "@/components/checkout";
 import { SecurityBadges } from "./SecurityBadges";
 import { PRODUCTS } from "@/lib/products";
