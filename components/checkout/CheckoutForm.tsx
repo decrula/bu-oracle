@@ -51,22 +51,6 @@ const CheckoutForm = () => {
         Enter your details below to receive your sacred dream reading
       </p>
 
-      {/* Email field */}
-      <div className="mb-6">
-        <label
-          htmlFor="email"
-          className="block text-[11px] uppercase tracking-widest text-on-surface-variant mb-2"
-        >
-          Email Address
-        </label>
-        <input
-          id="email"
-          type="email"
-          placeholder="seeker@domain.com"
-          className="w-full px-4 py-3.5 rounded-xl bg-surface-container-low border border-white/5 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-tertiary/50 focus:ring-1 focus:ring-tertiary/20 transition-all"
-        />
-      </div>
-
       {/* Initialize payment on interaction */}
       <div onMouseEnter={initializePayment} onFocus={initializePayment}>
         {clientSecret ? (
@@ -150,7 +134,17 @@ const PaymentForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-6">
-        <PaymentElement />
+        <PaymentElement
+          options={{
+            layout: "tabs",
+            fields: {
+              billingDetails: {
+                email: "auto",
+                name: "auto",
+              },
+            },
+          }}
+        />
       </div>
 
       <motion.button
