@@ -1,11 +1,10 @@
+"use client";
+
 import Checkout from "@/components/checkout";
 import { SecurityBadges } from "./SecurityBadges";
-import { PRODUCTS } from "@/lib/products";
+import { Product } from "@/lib/products";
 
-const CheckoutForm = () => {
-  
-  const product = PRODUCTS[0];
-
+const CheckoutForm = ({ product }: { product: Product }) => {
 
   return (
     <div className="glass-card rounded-3xl p-8">

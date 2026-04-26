@@ -1,9 +1,8 @@
 import { Shield, Sparkles } from "lucide-react";
-import { PRODUCTS } from "@/lib/products";
+import { Product } from "@/lib/products";
 import Image from "next/image";
 
-const OrderSummary = () => {
-  const product = PRODUCTS[0];
+const OrderSummary = ({ product }: { product: Product }) => {
   return (
     <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
       {/* Cloud pattern overlay */}
