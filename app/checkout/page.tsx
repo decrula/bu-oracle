@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { CheckoutForm } from "@/components/checkout/CheckoutForm";
 import { OrderSummary } from "@/components/checkout/OrderSummary";
+
+export const metadata: Metadata = {
+  title: "Checkout — Bu The Oracle of Dreams",
+  description: "Complete your sacred dream reading purchase",
+};
 
 export default function CheckoutPage() {
   return (
