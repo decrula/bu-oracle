@@ -2,10 +2,10 @@
 
 import { Shield, Sparkles } from "lucide-react";
 import { PRODUCTS } from "@/lib/products";
-
-const product = PRODUCTS[0];
+import Image from "next/image";
 
 const OrderSummary = () => {
+  const product = PRODUCTS[0];
   return (
     <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
       {/* Cloud pattern overlay */}
@@ -23,9 +23,11 @@ const OrderSummary = () => {
 
         {/* Placeholder mystical image */}
         <div className="w-full h-48 rounded-2xl bg-surface-container-high mb-6 flex items-center justify-center border border-white/5 overflow-hidden">
-          <img
-            src="/images/ethereal-sleep.jpg"
-            alt="Ethereal dream imagery"
+          <Image
+            src={product.images?.[0] || "/images/ethereal-sleep.jpg"}
+            alt={product.name}
+            width={80}
+            height={80}
             className="w-full h-full object-cover opacity-80"
             referrerPolicy="no-referrer"
           />
@@ -33,16 +35,22 @@ const OrderSummary = () => {
 
         {/* Product details */}
         <div className="space-y-4 mb-6">
-          <h3 className="font-serif text-lg text-on-surface">{product.name}</h3>
-          <p className="text-sm text-on-surface-variant font-light">{product.description}</p>
+          <h3 className="font-serif text-lg text-on-surface">Bu Dream Reading</h3>
+          <p className="text-sm text-on-surface-variant font-light">The Oracle's Wisdom</p>
 
           <div className="border-t border-tertiary/20 pt-4 space-y-3">
-            {product.features?.map((feature, index) => (
-              <div key={index} className="flex justify-between text-sm">
-                <span className="text-on-surface-variant">{feature}</span>
-                <span className="text-on-surface">Included</span>
-              </div>
-            ))}
+            <div className="flex justify-between text-sm">
+              <span className="text-on-surface-variant">Personalized Dream Analysis</span>
+              <span className="text-on-surface">Included</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-on-surface-variant">Zhou Gong's Ancient Wisdom</span>
+              <span className="text-on-surface">Included</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-on-surface-variant">Feng Shui Action Step</span>
+              <span className="text-on-surface">Included</span>
+            </div>
           </div>
         </div>
 
@@ -52,9 +60,7 @@ const OrderSummary = () => {
         {/* Total */}
         <div className="flex justify-between items-center mb-4">
           <span className="font-serif text-lg text-on-surface">Total</span>
-          <span className="font-serif text-3xl text-tertiary">
-            ${(product.priceInCents / 100).toFixed(2)}
-          </span>
+          <span className="font-serif text-3xl text-tertiary">${(product.priceInCents / 100).toFixed(2)}</span>
         </div>
 
         {/* Delivery note */}
