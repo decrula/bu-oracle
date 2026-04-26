@@ -1,3 +1,5 @@
+"use client";
+
 import { Shield, Sparkles } from "lucide-react";
 import { Product } from "@/lib/products";
 import Image from "next/image";

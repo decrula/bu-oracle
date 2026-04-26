@@ -23,7 +23,10 @@ export default function Checkout({ productId }: { productId: string }) {
     <div id="checkout">
       <EmbeddedCheckoutProvider
         stripe={stripePromise}
-        options={{ fetchClientSecret: startCheckoutSessionForProduct }}
+        options={{
+          fetchClientSecret: startCheckoutSessionForProduct,
+          appearance: { theme: "night" },
+        }}
       >
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider>
