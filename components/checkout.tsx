@@ -25,7 +25,6 @@ export default function Checkout({ productId }: { productId: string }) {
         stripe={stripePromise}
         options={{
           fetchClientSecret: startCheckoutSessionForProduct,
-          appearance: { theme: "night" },
         }}
       >
         <EmbeddedCheckout />
